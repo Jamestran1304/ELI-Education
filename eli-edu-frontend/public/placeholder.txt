@@ -1,0 +1,13 @@
+This directory contains static assets for the ELI EDU website.
+
+Required images:
+- hero-image.png
+- mission-image.jpg
+- courses/english.jpg
+- courses/math.jpg
+- courses/science.jpg
+- team/john.jpg
+- team/sarah.jpg
+- team/michael.jpg
+
+Please replace these placeholder images with actual images for your website. 

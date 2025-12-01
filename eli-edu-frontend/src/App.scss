@@ -1,0 +1,390 @@
+// Variables
+$primary-color: #ff0707;
+$secondary-color: #2d3748;
+$text-color: #4a5568;
+$light-gray: #f7fafc;
+$border-color: #e2e8f0;
+$success-color: #48bb78;
+$error-color: #e53e3e;
+
+// Mixins
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: $text-color;
+  line-height: 1.5;
+  background-color: $light-gray;
+}
+
+// App layout
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+// Header
+.header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__container {
+    @include container;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 32px;
+
+    &-link {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__button {
+    @include button;
+    background: $primary-color;
+    color: #fff;
+
+    &--outline {
+      background: transparent;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Hero section
+.hero {
+  background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: 20px;
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
+
+  &__button {
+    @include button;
+    background: #fff;
+    color: $primary-color;
+    font-size: 18px;
+    padding: 16px 32px;
+
+    &:hover {
+      background: darken(#fff, 5%);
+    }
+  }
+}
+
+// Section styles
+.section {
+  &__container {
+    @include container;
+    padding: 64px 24px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+}
+
+// Course detail
+.course-detail {
+  background: #fff;
+  padding: 48px 0;
+
+  &__header {
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__instructor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    gap: 24px;
+    color: $text-color;
+
+    i {
+      margin-right: 8px;
+      color: $primary-color;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+  }
+
+  &__description {
+    margin-bottom: 48px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__curriculum {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__lessons {
+    list-style: none;
+  }
+
+  &__lesson {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+    i {
+      color: $primary-color;
+      margin-right: 12px;
+    }
+
+    &-duration {
+      margin-left: auto;
+      color: $text-color;
+      font-size: 14px;
+    }
+  }
+
+  &__card {
+    background: $light-gray;
+    border-radius: 8px;
+    padding: 24px;
+    position: sticky;
+    top: 100px;
+  }
+
+  &__price {
+    font-size: 32px;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 24px;
+  }
+
+  &__enroll-button {
+    @include button;
+    width: 100%;
+    background: $success-color;
+    color: #fff;
+    margin-bottom: 24px;
+
+    &:hover {
+      background: darken($success-color, 5%);
+    }
+  }
+
+  &__features {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    i {
+      color: $primary-color;
+    }
+  }
+
+  &__related {
+    margin-top: 64px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background: $secondary-color;
+  color: #fff;
+  padding: 64px 0 0;
+
+  &__container {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    opacity: 0.8;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  &__links {
+    list-style: none;
+
+    li {
+      margin-bottom: 12px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+
+    a {
+      color: #fff;
+      font-size: 24px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 0;
+    text-align: center;
+    opacity: 0.8;
+  }
+}
