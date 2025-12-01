@@ -16,6 +16,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    rollupOptions: {
+      external: ['react/jsx-runtime']
+    }
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
