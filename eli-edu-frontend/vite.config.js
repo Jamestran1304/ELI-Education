@@ -23,7 +23,8 @@ export default defineConfig({
         '@mui/icons-material',
         'framer-motion',
         'react',
-        'react-dom'
+        'react-dom',
+        'axios'
       ],
       output: {
         manualChunks: {} // Removed all manualChunks to avoid conflicts
