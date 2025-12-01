@@ -17,7 +17,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
     rollupOptions: {
-      external: ['react/jsx-runtime'],
+      external: ['react/jsx-runtime', '@mui/material'],
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom']
