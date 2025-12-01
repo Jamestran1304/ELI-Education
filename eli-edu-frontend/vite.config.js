@@ -20,7 +20,7 @@ export default defineConfig({
       external: ['react/jsx-runtime'],
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom']
+          vendor: ['react', 'react-dom', 'react-router-dom']
         }
       }
     },
