@@ -17,11 +17,15 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
     rollupOptions: {
-      external: ['react/jsx-runtime', '@mui/material'],
+      external: [
+        'react/jsx-runtime',
+        '@mui/material',
+        'framer-motion',
+        'react',
+        'react-dom'
+      ],
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom']
-        }
+        manualChunks: {} // Removed all manualChunks to avoid conflicts
       }
     },
     chunkSizeWarningLimit: 1000 // Adjust chunk size warning limit
