@@ -20,6 +20,7 @@ export default defineConfig({
       external: [
         'react/jsx-runtime',
         '@mui/material',
+        '@mui/icons-material',
         'framer-motion',
         'react',
         'react-dom'
