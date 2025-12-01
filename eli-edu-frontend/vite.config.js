@@ -17,8 +17,14 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
     rollupOptions: {
-      external: ['react/jsx-runtime']
-    }
+      external: ['react/jsx-runtime'],
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000 // Adjust chunk size warning limit
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
