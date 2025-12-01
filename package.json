@@ -17,6 +17,7 @@
     "vite": "^7.2.6"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "axios": "^1.13.2",

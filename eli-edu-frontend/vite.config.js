@@ -34,5 +34,8 @@ export default defineConfig({
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
-  }
+  },
+  optimizeDeps: {
+    include: ['@emotion/react'],
+  },
 })
